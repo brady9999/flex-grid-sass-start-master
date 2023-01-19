@@ -1,0 +1,109 @@
+/* 
+this styles every element on the page to include padding and 
+border mesurements when calculating the widths and heights of elements
+
+Normally, the actual width of element is calculated like so::afteractual
+width = width property + padding property + border property
+
+now, because we set box-sizing to border box, the width of the whole element
+is going to be the width that we state as part of width property for an element.
+
+actual width = width property = content width + padding + border
+*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* this styles the nevagations unordered list to be a flexbox container.
+   flexbox containers typically help with designing responsive web pages
+*/
+
+/* 
+this styles the nav to have no padding inside the navagation bar
+*/
+nav {
+  padding: 0;
+
+  height: 10vh;
+}
+nav ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  /* this allowes our flex items ti wrap to the next line when we run out of space to display them */
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  /* 
+  this allows the flex container to display items vertically as 
+  opposed to horizontally (row), which is the defult
+  
+  -webkit-box-orient: vertical;
+
+  -webkit-box-direction: normal;
+
+  -webkit-flex-direction: column;
+
+  -moz-box-orient: vertical;
+
+  -moz-box-direction: normal;
+
+  -ms-flex-direction: column;
+
+  flex-direction: column;
+  */
+  /* the justify content property allows up to allign items in the same ddirection that
+   the flex container is displaying our items in.
+
+   so, for a horizontal layout, it allows us to align item horizontally. for a verticle layout,
+   it allows us to align items vertically
+
+   Values for justify-content include:
+   flex-start - aligns the item to the start of the container
+   flex-end - aligns the items to the end of the container
+   center - aligns the items the the center of the container
+   space-between - puts space between each item in the container, but does
+                   not add space to the left of the first item or the right of the last item
+                   space-around - puts space around each item in the container
+  */
+
+  -webkit-justify-content: space-around;
+
+  -ms-flex-pack: distribute;
+
+  justify-content: space-around;
+
+  /* 
+  the align items property aligns the flex items in the opposite direction
+  of how the flex container is laid out. so, if the flex container is set as a 
+  row, align-items will align the flex items in the vertical direction if the flex
+  container is set as a column, align-items  will align the flex items in the horazontal direction
+  */
+
+  -webkit-box-align: center;
+
+  -webkit-align-items: center;
+
+  -moz-box-align: center;
+
+  -ms-flex-align: center;
+
+  align-items: center;
+
+  height: 100%;
+}
+/*
+ this styles the anchors inside the navagation bar to fill 
+ the width and the height of the list items they are inside
+*/
+nav ul li a {
+  width: 100%;
+  height: 100%;
+
+  padding: 1vw;
+}
